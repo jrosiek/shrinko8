@@ -1,0 +1,21 @@
+[project]
+name = "shrinko8"
+version = "0.1.0"
+description = "A set of Pico-8 & Picotron cart tools, with a focus on shrinking code size."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "pillow>=10.4.0",
+]
+
+[project.scripts]
+shrinko8 = "shrinko8:main"
+
+[tool.setuptools]
+# Ugly hack to support packageless flat layout of this repo without refatoring it.
+# We need to enumerate all *.py files to include the into package/instalation.
+py-modules = ['picotron_cart', 'pico_compress', 'pico_preprocess', 'run_tests', 'run_site_tests', 'pico_rename', 'pico_output', 'pico_minify', 'pico_tokenize', 'pico_defs', 'pico_parse', 'pico_cart', 'pico_export', 'test_gui_utils', 'test_utils', 'utils', 'pico_unminify', 'run_shrinko', 'pico_constfold', 'picotron_export', 'media_utils', 'pico_utils', 'pico_process', 'picotron_defs', 'picotron_fs', 'shrinko8', 'shrinkotron', 'pico_lint', 'run_bbs_tests']
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
